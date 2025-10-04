@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 import { type ManualSection } from "@shared/schema";
 
-// the newest OpenAI model is "gpt-5" which was released August 7, 2025. do not change this unless explicitly requested by the user
+// Using GPT-4o which is the latest available model
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 interface ProcedureStep {
@@ -69,7 +69,7 @@ Si la question n'est pas une procédure, omets "procedureSteps" et fournis juste
   }));
 
   const completion = await openai.chat.completions.create({
-    model: "gpt-5",
+    model: "gpt-4o",
     messages: [
       {
         role: "system",
