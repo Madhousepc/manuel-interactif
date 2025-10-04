@@ -110,7 +110,7 @@ export default function Chat() {
             </div>
           ) : (
             <>
-              {messages.map((message) => (
+              {messages.filter(message => message && message.id).map((message) => (
                 <ChatMessage key={message.id} message={message} />
               ))}
 
